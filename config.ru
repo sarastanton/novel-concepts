@@ -6,5 +6,4 @@ end
 
 use Rack::MethodOverride
 
-
-# NEED TO MOUNT CONTROLLERS
+run ApplicationController 
