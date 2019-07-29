@@ -41,8 +41,8 @@ class Name < ActiveRecord::Base
   end
 
   def self.generate_male_name
-    first_name_index = rand(@@male_first_names.length - 1)
-    last_name_index = rand(@@male_first_names.length - 1)
+    first_name_index = rand(@@male_first_names.length)
+    last_name_index = rand(@@male_first_names.length)
 
     first_name = @@male_first_names[first_name_index]
     last_name = @@last_names[last_name_index]
@@ -51,8 +51,8 @@ class Name < ActiveRecord::Base
   end
 
   def self.generate_female_name
-    first_name_index = rand(@@female_first_names.length - 1)
-    last_name_index = rand(@@female_first_names.length - 1)
+    first_name_index = rand(@@female_first_names.length)
+    last_name_index = rand(@@female_first_names.length)
 
     first_name = @@female_first_names[first_name_index]
     last_name = @@last_names[last_name_index]

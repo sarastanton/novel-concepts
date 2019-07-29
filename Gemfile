@@ -11,7 +11,7 @@ gem 'bcrypt'
 gem 'rack-flash3'
 gem 'sinatra-flash'
 gem 'pry'
-gem 'pg'
+# gem 'pg'
 gem 'tux'
 
 ruby '2.6.3'

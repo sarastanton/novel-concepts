@@ -29,7 +29,7 @@ function listeners() {
 
 function handleName() {
   getName()
-  displayName();
+  displayNameText();
 }
 
 async function handlePlot() {
