@@ -7,13 +7,15 @@ let name_space = document.getElementById("name-result");
 
 
 function getName() {
-  fetch(`https://health.data.ny.gov/resource/jxy9-yhdk.json`).then(response => console.log(response));
+  fetch(`https://health.data.ny.gov/resource/jxy9-yhdk.json`)
+  .then(response => response.text())
+  .then(resp => name = resp)
 }
 
-async function getPlot() {
+ function getPlot() {
   fetch('http://127.0.0.1:9393/generate_plot')
-  .then(response => response.text())
-  .then(response_text => plot = response_text)
+  .then(response => response.text()).
+  then(resp => plot = resp)
 }
 
 function listeners() {
@@ -30,18 +32,17 @@ function handleName() {
   displayName();
 }
 
-function handlePlot() {
- getPlot();
- debugger
-  displayPlotText();
+async function handlePlot() {
+  getPlot()
+  displayPlotText()
 }
 
 function displayPlotText() {
-  name_space.textContent = `${plot}`
+  plot_space.textContent = `${plot}`
 }
 
 function displayNameText() {
-  plot_space.textContent = `Meet your new character: ${name[0]} ${name[1]}`
+  name_space.textContent = `Meet your new character: ${name}`
 }
 
 

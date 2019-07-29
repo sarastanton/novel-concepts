@@ -6,7 +6,8 @@ font-family: 'Acme', sans-serif; */
 
 body {
   margin: 0;
-  font-family: 'Bitter', serif;
+  font-family: 'Acme', serif;
+  font-size: 16pt;
   background-color: linen;
   color: salmon;
 }
@@ -31,8 +32,8 @@ body {
   font-size: 16pt;
   background-color: salmon;
   color: linen;
-  font-family: 'Acme', sans-serif;
-  font-size: 26pt;
+  font-family: 'Bitter', sans-serif;
+  font-size: 22pt;
 }
 
 .navbar-item:hover {
@@ -61,8 +62,8 @@ a:visited {
   color: linen;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   width: 40%;
-  font-family: 'Acme', sans-serif;
-  font-size: 14pt;
+  font-family: 'Bitter', sans-serif;
+  font-size: 12pt;
 }
 
 .button:hover {

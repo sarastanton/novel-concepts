@@ -57,7 +57,7 @@ class Name < ActiveRecord::Base
     first_name = @@female_first_names[first_name_index]
     last_name = @@last_names[last_name_index]
 
-    [first_name, last_name]
+    [first_name, " ", last_name]
   end
 
 
