@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title> Novel Concepts </title>
+    <link href="https://fonts.googleapis.com/css?family=Acme|Bitter|Dancing+Script|Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css?version=3">
+  </head>
+
+  <body>
+
+    <div class="navbar-container">
+      <a href="/" class="navbar-item">
+        Home
+      </a>
+      <a href="/plot_generator" class="navbar-item">
+        Plots
+      </a>
+      <a href="/name_generator" class="navbar-item">
+        Names
+      </a>
+      <!-- <a href="/saved_items">
+        <div class="navbar-item">
+        </div>
+      </a> -->
+		</div>
+
+    <div class="non-nav">
+
+		<%= yield %>
+
+    </div>
+
+  <script src="/app.js" type="text/javascript"></script>
+	</body>
+
+	<br></br>
+
+	<div class="error">
+		<% if flash[:error] != "" %>
+	 		<p> <%= flash[:error] %> </p>
+		<% end %>
+	</div>
+
+	<div class="success">
+		<% if flash[:success] != "" %>
+	 		<p> <%= flash[:success] %> </p>
+		<% end %>
+	</div>
+
+</html>

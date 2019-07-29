@@ -16,7 +16,23 @@ class ApplicationController < Sinatra::Base
   # end
 
   get '/' do
-    "Hello, world!"
+    erb :index
+  end
+
+  get '/plot_generator' do
+    erb :plot_generator
+  end
+
+  get '/generate_plot' do
+    Plot.generate_plot
+  end
+
+  get '/name_generator' do
+    erb :name_generator
+  end
+
+  get '/saved_items' do
+    erb :saved
   end
 
 end
