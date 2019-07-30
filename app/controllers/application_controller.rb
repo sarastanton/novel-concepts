@@ -6,6 +6,10 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
+  set :male_first_names, []
+  set :female_first_names, []
+  set :last_names, []
+
   get '/' do
     erb :index
   end
@@ -21,15 +25,18 @@ class ApplicationController < Sinatra::Base
   get '/name_generator' do
     Name.populate_first_names
     Name.populate_last_names
+    settings.male_first_names = Name.male_first_names
+    settings.female_first_names = Name.female_first_names
+    settings.last_names = Name.last_names
     erb :name_generator
   end
 
   get '/generate_male_name' do
-    Name.generate_male_name
+    Name.generate_name(settings.male_first_names, settings.last_names)
   end
 
   get '/generate_female_name' do
-    Name.generate_female_name
+    Name.generate_name(settings.female_first_names, settings.last_names)
   end
 
   get '/saved_items' do

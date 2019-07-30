@@ -9,11 +9,13 @@ let name_space = document.getElementById("name-result");
 function getName() {
   let radio_button =  document.querySelector('input[name="gender"]:checked');
   if(radio_button.value === "female") {
-    fetch('http://127.0.0.1:9393/generate_female_name')
+    // return fetch('http://127.0.0.1:9393/generate_female_name')
+    return fetch(' https://novel-concepts.herokuapp.com/generate_female_name')
     .then(response => response.text())
     .then(resp => name = resp)
   } else if(radio_button.value === "male") {
-    fetch('http://127.0.0.1:9393/generate_male_name')
+    return fetch('http://127.0.0.1:9393/generate_male_name')
+    // return fetch(' https://novel-concepts.herokuapp.com/generate_male_name')
     .then(response => response.text())
     .then(resp => name = resp)
   };
@@ -21,7 +23,8 @@ function getName() {
 }
 
  function getPlot() {
-  return fetch('http://127.0.0.1:9393/generate_plot')
+  // return fetch('http://127.0.0.1:9393/generate_plot')
+  return fetch('https://novel-concepts.herokuapp.com/generate_plot')
   .then(response => response.text()).
   then(resp => plot = resp)
 }
@@ -35,8 +38,8 @@ function listeners() {
   };
 }
 
-function handleName() {
-  getName()
+async function handleName() {
+  await getName();
   displayNameText();
 }
 
