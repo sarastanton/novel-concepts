@@ -24,8 +24,8 @@ body {
 .navbar-item {
   /* display: inline; */
   padding: 15px;
-  border-bottom: solid 1px grey;
-  border-left: solid 1px grey;
+  border-bottom: solid 1px yellow;
+  border-left: solid 1px linen;
   width: 100%;
   text-decoration: none;
   font-family: sans-serif;
@@ -79,5 +79,9 @@ a:visited {
 .non-nav {
   margin-left: 5px;
   text-align: center;
+}
 
+.result {
+  font-size: 36pt;
+  font-family: 'Shadows Into Light', cursive;
 }

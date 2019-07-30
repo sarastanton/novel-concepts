@@ -7,13 +7,21 @@ let name_space = document.getElementById("name-result");
 
 
 function getName() {
-  fetch('http://127.0.0.1:9393/generate_name')
-  .then(response => response.text())
-  .then(resp => name = resp)
+  let radio_button =  document.querySelector('input[name="gender"]:checked');
+  if(radio_button.value === "female") {
+    fetch('http://127.0.0.1:9393/generate_female_name')
+    .then(response => response.text())
+    .then(resp => name = resp)
+  } else if(radio_button.value === "male") {
+    fetch('http://127.0.0.1:9393/generate_male_name')
+    .then(response => response.text())
+    .then(resp => name = resp)
+  };
+  return name
 }
 
  function getPlot() {
-  fetch('http://127.0.0.1:9393/generate_plot')
+  return fetch('http://127.0.0.1:9393/generate_plot')
   .then(response => response.text()).
   then(resp => plot = resp)
 }
@@ -21,10 +29,10 @@ function getName() {
 function listeners() {
   if (plot_button) {
     plot_button.addEventListener("click", handlePlot);
-  }
+  };
   if (name_button) {
     name_button.addEventListener("click", handleName);
-  }
+  };
 }
 
 function handleName() {
@@ -33,7 +41,7 @@ function handleName() {
 }
 
 async function handlePlot() {
-  getPlot()
+  await getPlot();
   displayPlotText()
 }
 

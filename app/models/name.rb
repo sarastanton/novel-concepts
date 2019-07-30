@@ -1,4 +1,3 @@
-# https://health.data.ny.gov/resource/jxy9-yhdk.json
 require 'json'
 require 'net/http'
 
@@ -42,12 +41,18 @@ class Name < ActiveRecord::Base
     end
   end
 
+  def self.properly_capitalize(string)
+    name = string.downcase
+    name[0] = name[0].upcase
+    name
+  end
+
   def self.generate_male_name
     first_name_index = rand(@@male_first_names.length)
     last_name_index = rand(@@male_first_names.length)
 
-    first_name = @@male_first_names[first_name_index]
-    last_name = @@last_names[last_name_index]
+    first_name = properly_capitalize(@@male_first_names[first_name_index])
+    last_name = properly_capitalize(@@last_names[last_name_index])
 
     [first_name, " ", last_name]
   end
@@ -56,22 +61,21 @@ class Name < ActiveRecord::Base
     first_name_index = rand(@@female_first_names.length)
     last_name_index = rand(@@female_first_names.length)
 
-    first_name = @@female_first_names[first_name_index]
-    last_name = @@last_names[last_name_index]
+    first_name = properly_capitalize(@@female_first_names[first_name_index])
+    last_name = properly_capitalize(@@last_names[last_name_index])
 
     [first_name, " ", last_name]
   end
 
-
-  def male_first_names
+  def self.male_first_names
     @@male_first_names
   end
 
-  def female_first_names
+  def self.female_first_names
     @@female_first_names
   end
 
-  def last_names
+  def self.last_names
     @@last_names
   end
 

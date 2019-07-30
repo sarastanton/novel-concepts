@@ -2,18 +2,9 @@ require './config/environment'
 
 class ApplicationController < Sinatra::Base
 
-  register Sinatra::Flash
-  require 'sinatra/flash'
-
   configure do
-    # enable :sessions
-    # set :session_secret, "secret"
-    # set :public_folder, 'public'
     set :views, 'app/views'
   end
-
-  # helpers do
-  # end
 
   get '/' do
     erb :index
@@ -27,16 +18,18 @@ class ApplicationController < Sinatra::Base
     Plot.generate_plot
   end
 
-  get '/generate_name_male' do
+  get '/name_generator' do
+    Name.populate_first_names
+    Name.populate_last_names
+    erb :name_generator
+  end
+
+  get '/generate_male_name' do
     Name.generate_male_name
   end
 
-  get '/generate_name_female' do
+  get '/generate_female_name' do
     Name.generate_female_name
-  end
-
-  get '/name_generator' do
-    erb :name_generator
   end
 
   get '/saved_items' do
