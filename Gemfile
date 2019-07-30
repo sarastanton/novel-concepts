@@ -8,7 +8,6 @@ gem "rack", ">= 2.0.6"
 gem 'shotgun'
 gem 'require_all'
 gem 'pry'
-gem 'pg'
 gem 'tux'
 
 ruby '2.6.3'
