@@ -47,22 +47,12 @@ class Name < ActiveRecord::Base
     name
   end
 
-  def self.generate_male_name
-    first_name_index = rand(@@male_first_names.length)
-    last_name_index = rand(@@male_first_names.length)
+  def self.generate_name(first_names_array, last_names_array)
+    first_name_index = rand(first_names_array.length)
+    last_name_index = rand(first_names_array.length)
 
-    first_name = properly_capitalize(@@male_first_names[first_name_index])
-    last_name = properly_capitalize(@@last_names[last_name_index])
-
-    [first_name, " ", last_name]
-  end
-
-  def self.generate_female_name
-    first_name_index = rand(@@female_first_names.length)
-    last_name_index = rand(@@female_first_names.length)
-
-    first_name = properly_capitalize(@@female_first_names[first_name_index])
-    last_name = properly_capitalize(@@last_names[last_name_index])
+    first_name = properly_capitalize(first_names_array[first_name_index])
+    last_name = properly_capitalize(last_names_array[last_name_index])
 
     [first_name, " ", last_name]
   end

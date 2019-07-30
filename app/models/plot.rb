@@ -1,5 +1,5 @@
 class Plot < ActiveRecord::Base
-  @@nouns = ["A man", "A woman", "A whale", "A ghost", "A cat", "An assassin", "A thief", "An alien"]
+  @@nouns = ["A man", "A woman", "A whale", "A ghost", "A cat", "An assassin", "A thief", "An alien", "A baby", "A European tourist"]
   @@verbs = ["walks into a bar", "cries out", "vanishes", "appears", "has a picnic", "goes for a bicycle ride", "reads a book", "kisses a stranger", "plays the flute", "eats a sandwich", "wakes up from a nightmare", "faints"]
   @@settings = ["by the seaside", "in New York City", "in a small mountain town", "in Central Park", "on the beach", "in Tokyo", "in a dark alley", "in an abandoned Victorian mansion", "in the rain", "during a thunderstorm"]
 
