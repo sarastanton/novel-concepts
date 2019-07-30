@@ -7,7 +7,7 @@ let name_space = document.getElementById("name-result");
 
 
 function getName() {
-  fetch(`https://health.data.ny.gov/resource/jxy9-yhdk.json`)
+  fetch('http://127.0.0.1:9393/generate_name')
   .then(response => response.text())
   .then(resp => name = resp)
 }

@@ -27,6 +27,14 @@ class ApplicationController < Sinatra::Base
     Plot.generate_plot
   end
 
+  get '/generate_name_male' do
+    Name.generate_male_name
+  end
+
+  get '/generate_name_female' do
+    Name.generate_female_name
+  end
+
   get '/name_generator' do
     erb :name_generator
   end
