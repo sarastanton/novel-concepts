@@ -4,6 +4,7 @@ class ApplicationController < Sinatra::Base
 
   configure do
     set :views, 'app/views'
+    set :public_folder, 'public'
   end
 
   set :male_first_names, []
