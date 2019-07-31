@@ -14,8 +14,8 @@ function getName() {
     .then(response => response.text())
     .then(resp => name = resp)
   } else if(radio_button.value === "male") {
-    return fetch('http://127.0.0.1:9393/generate_male_name')
-    // return fetch(' https://novel-concepts.herokuapp.com/generate_male_name')
+    // return fetch('http://127.0.0.1:9393/generate_male_name')
+    return fetch(' https://novel-concepts.herokuapp.com/generate_male_name')
     .then(response => response.text())
     .then(resp => name = resp)
   };
