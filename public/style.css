@@ -6,10 +6,14 @@ font-family: 'Acme', sans-serif; */
 
 body {
   margin: 0;
-  font-family: 'Acme', serif;
+  font-family: 'Bitter', serif;
   font-size: 16pt;
   background-color: linen;
   color: salmon;
+}
+
+.radio {
+  margin: 10px;
 }
 
 .navbar-container {
@@ -53,7 +57,6 @@ a:link {
 a:visited {
   color: linen;
 }
-
 
 .button {
   padding: 6px;
