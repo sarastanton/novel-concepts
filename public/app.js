@@ -9,19 +9,19 @@ let plot_space = document.getElementById("plot-result");
 let name_button = document.getElementById("name-button");
 let name_space = document.getElementById("name-result");
 
-function fetchFirstNames() {
+const fetchFirstNames = () => {
   return fetch('https://health.data.ny.gov/resource/jxy9-yhdk.json')
     .then(response => response.json())
     .then(names => all_first_names = names)
 }
 
-function fetchLastNames() {
+const fetchLastNames = () => {
   return fetch('https://api.census.gov/data/2010/surname?get=NAME&RANK=1:1000')
     .then(response => response.json())
     .then(names => last_names = names.slice(1));
 }
 
-function sortFirstNames() {
+const sortFirstNames = () => {
   all_first_names.forEach(function(name) {
     if(name["sex"] === "M") {
       male_first_names.push(name["first_name"])
@@ -31,7 +31,7 @@ function sortFirstNames() {
   })
 }
 
-function generateName() {
+const generateName = () => {
   let female_name_index = Math.floor(Math.random() * (female_first_names.length));
   let male_name_index = Math.floor(Math.random() * (male_first_names.length));
   let last_name_index = Math.floor(Math.random() * (last_names.length));
@@ -46,18 +46,19 @@ function generateName() {
   name = first + " " + last;
 }
 
-function properly_capitalize(name) {
+const properly_capitalize = (name) => {
   return name[0] + name.slice(1).toLowerCase()
 }
 
-function getPlot() {
-  // return fetch('http://127.0.0.1:9393/generate_plot')
+const getPlot = () => {
+  // on local:
+  // return fetch('http://localhost:9393/generate_plot')
   return fetch('https://novel-concepts.herokuapp.com/generate_plot')
   .then(response => response.text()).
   then(resp => plot = resp)
 }
 
-function listeners() {
+const listeners = () => {
   if (plot_button) {
     plot_button.addEventListener("click", handlePlot);
   };
@@ -66,25 +67,25 @@ function listeners() {
   };
 }
 
-function displayPlotText() {
+const displayPlotText = () => {
   plot_space.textContent = `${plot}`
 }
 
-function displayNameText() {
+const displayNameText = () => {
   name_space.textContent = `Meet your new character: ${name}`
 }
 
-function handleName() {
+const handleName = () => {
   generateName();
   displayNameText();
 }
 
-async function handlePlot() {
+const handlePlot = async () => {
   await getPlot();
   displayPlotText()
 }
 
-async function gatherNames() {
+const gatherNames = async () => {
   await fetchFirstNames();
   await fetchLastNames();
   sortFirstNames();
