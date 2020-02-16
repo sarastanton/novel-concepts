@@ -10,6 +10,7 @@ body {
   font-size: 16pt;
   background-color: linen;
   color: salmon;
+  height: 100vh;
 }
 
 .radio {
