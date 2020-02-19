@@ -8,7 +8,7 @@ body {
   margin: 0;
   font-family: 'Bitter', serif;
   font-size: 16pt;
-  background-image: linear-gradient(to bottom, floralwhite, lightsalmon);
+  background-image: linear-gradient(to bottom, floralwhite 60%, lightsalmon);
   color: salmon;
   height: 100vh;
 }
