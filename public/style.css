@@ -8,7 +8,7 @@ body {
   margin: 0;
   font-family: 'Bitter', serif;
   font-size: 16pt;
-  background-color: linen;
+  background-image: linear-gradient(to bottom, floralwhite, lightsalmon);
   color: salmon;
   height: 100vh;
 }
@@ -88,4 +88,5 @@ a:visited {
 .result {
   font-size: 36pt;
   font-family: 'Shadows Into Light', cursive;
+  font-weight: bold;
 }
